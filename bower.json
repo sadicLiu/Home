@@ -1,0 +1,21 @@
+{
+  "name": "liuhongyu",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "liuhy <190978752@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4"
+  }
+}
