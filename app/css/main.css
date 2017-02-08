@@ -1,11 +1,14 @@
 /*
  * Globals
  */
+/* Utilities*/
 /* Links */
 a,
-a:focus,
-a:hover {
+a:focus {
   color: #fff; }
+
+a:hover {
+  color: #fd5a53 !important; }
 
 ul {
   list-style: none; }
@@ -31,9 +34,18 @@ body {
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5); }
+  position: relative; }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-nav {
+  position: relative; }
+  .site-nav a {
+    display: inline-block;
+    position: absolute;
+    right: 17%;
+    top: 50px;
+    bottom: 0; }
+
 .site-wrapper {
   display: table;
   width: 100%;
@@ -45,10 +57,9 @@ body {
   background: url("../images/background.jpg") no-repeat center fixed;
   background-size: cover; }
   .site-wrapper .site-wrapper-inner {
-    display: table-cell;
-    vertical-align: top; }
+    vertical-align: top;
+    margin-top: 180px; }
     .site-wrapper .site-wrapper-inner .cover-container {
-      margin-top: 180px;
       margin-right: auto;
       margin-left: auto; }
       .site-wrapper .site-wrapper-inner .cover-container .cover-heading {
@@ -80,6 +91,49 @@ body {
         border: 2px solid #dfdbdf;
         cursor: pointer;
         font-weight: bolder; }
+        .site-wrapper .site-wrapper-inner .site-content .content-box .category:hover {
+          color: #fd5a53;
+          border-color: #fd5a53; }
+
+.site-sidebar {
+  visibility: hidden;
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: whitesmoke;
+  border-top: none;
+  text-align: left;
+  border-left: 1px solid #e3e3e3;
+  padding-right: 0;
+  padding-left: 30px;
+  z-index: 9999; }
+  .site-sidebar .nav > li {
+    border-bottom: 1px solid #e5e5e5; }
+    .site-sidebar .nav > li a {
+      margin: 0 0;
+      display: inline-block;
+      text-decoration: none;
+      color: #444444;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 13px;
+      padding: 24px 0;
+      font-family: "Verlag-Book", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .site-sidebar ul {
+    position: relative;
+    z-index: 3;
+    overflow-y: auto;
+    height: 95%; }
+    .site-sidebar ul li.social-links {
+      text-align: center;
+      margin-left: -40px; }
+      .site-sidebar ul li.social-links a {
+        font-size: 18px;
+        padding: 24px 10px;
+        display: inline-block; }
 
 /* Padding for spacing */
 .inner {
@@ -100,6 +154,9 @@ body {
  */
 /* shrink the distance to the top in phone*/
 @media (max-width: 576px) {
+  .site-wrapper .site-nav {
+    display: none; }
+
   .site-wrapper .site-wrapper-inner .cover-container {
     margin-top: 80px; }
 

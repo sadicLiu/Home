@@ -9,10 +9,23 @@
 	<link rel="shortcut icon" href="./favicon.ico">
 	<link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./bower_components/animate.css/animate.min.css">
 	<link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+<!--
+	site-wrapper作为ng-view，把nav和sidebar提出来
+	首先解决sidebar淡入淡出的问题，用animate.css
+	然后写好sidebar的内容，包括隐藏小图标的问题
+	复习angular，分模块开发
+-->
+<!--navigation-->
+<div class="site-nav">
+	<a href="#" id="toggleBar" data-open="false"><i class="fa fa-lg fa-cog fa-spin"></i></a>
+</div>
+<!--/navigation-->
 <div class="site-wrapper">
+	<!--main content-->
 	<div class="site-wrapper-inner">
 		<!--slogan and social info-->
 		<div class="cover-container">
@@ -20,14 +33,14 @@
 				<p class="cover-heading">刘洪宇的个人网站</p>
 				<div class="social-widget">
 					<ul>
-						<li class="">
-							<a href="https://github.com/sadicLiu">
-								<i class="fa fa-github" style="color: #ffffff;"></i>
+						<li>
+							<a href="https://github.com/sadicLiu" target="_blank">
+								<i class="fa fa-github"></i>
 							</a>
 						</li>
-						<li class="">
-							<a href="http://weibo.com/p/1005053052077213/home?from=page_100505&mod=TAB#place">
-								<i class="fa fa-weibo" style="color: #ffffff;"></i>
+						<li>
+							<a href="http://weibo.com/p/1005053052077213/home?from=page_100505&mod=TAB#place" target="_blank">
+								<i class="fa fa-weibo"></i>
 							</a>
 						</li>
 					</ul>
@@ -46,7 +59,7 @@
 				</div>
 				<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
 					<div class="category">
-						<i class="fa fa-heartbeat"></i>
+						<i class="fa fa-heartbeat animated pulse infinite"></i>
 						<p>关于健身</p>
 					</div>
 				</div>
@@ -61,7 +74,41 @@
 		</div>
 		<!--/main content-->
 	</div>
+	<!--/main content-->
 </div>
+<!--side bar-->
+<div class="site-sidebar">
+	<ul class="nav navbar-nav">
+		<li class="social-links">
+			<a href="https://github.com/sadicLiu" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+			<a href="http://weibo.com/p/1005053052077213/home?from=page_100505&mod=TAB#place" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+		<li>
+			<a href="#">Home</a>
+		</li>
+		<li>
+			<a href="#">Technology</a>
+		</li>
+		<li>
+			<a href="#">BodyBuilding</a>
+		</li>
+		<li>
+			<a href="#">Instagram</a>
+		</li>
+		<li>
+			<a href="#">About Me</a>
+		</li>
+		<li>
+			<a href="#">Contact</a>
+		</li>
+	</ul>
+</div>
+<!--/side bar-->
+
 <script src="./bower_components/jquery/dist/jquery.slim.min.js"></script>
 <script src="./bower_components/tether/dist/js/tether.min.js"></script>
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
