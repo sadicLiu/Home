@@ -122,17 +122,19 @@
 <script src="./bower_components/jquery/dist/jquery.slim.min.js"></script>
 <script src="./bower_components/tether/dist/js/tether.min.js"></script>
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/angular-route/angular-route.js"></script>
 <script type="text/javascript">
 	// 之所以要把这段脚本写在这里，是不想把jquery和angular混用
 	/*
 	 * 为sidebar注册事件
 	 * */
-	const toggleBar = $('#toggleBar');
-	const sideBar = $(".site-sidebar");
+	var toggleBar = $('#toggleBar');
+	var sideBar = $(".site-sidebar");
 
 	toggleBar.on('click', function () {
 		// 标识sidebar是否打开的变量
-		let openFlag = $(this).data('open');
+		var openFlag = $(this).data('open');
 
 		// 如果sidebar打开了，让它弹出去再隐藏，同时将×替换成齿轮
 		if (openFlag) {
@@ -158,6 +160,6 @@
 		$(this).data('open', !openFlag);
 	});
 </script>
-<script src="app.js"></script>
+<!--<script src="app.js"></script>-->
 </body>
 </html>

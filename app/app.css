@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Links */
 a,
 a:focus {
@@ -19,7 +20,8 @@ body {
 body {
   color: #fff;
   text-align: center;
-  position: relative; }
+  position: relative;
+  font-family: "Helvetica", "Tahoma", "Arial", "STXihei", "鍗庢枃缁嗛粦", "Microsoft YaHei", "SimSun", "瀹嬩綋", "Heiti", "榛戜綋", "sans-serif"; }
 
 /* Navigation Bar*/
 .site-nav {
