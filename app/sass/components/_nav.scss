@@ -1,0 +1,18 @@
+/* Navigation Bar*/
+.site-nav {
+  position: relative;
+
+  a {
+	display: inline-block;
+	position: absolute;
+	right: 17%;
+	top: 50px;
+	bottom: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-nav {
+	display: none;
+  }
+}

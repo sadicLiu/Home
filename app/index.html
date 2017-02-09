@@ -8,74 +8,84 @@
 	<title>Home</title>
 	<link rel="shortcut icon" href="./favicon.ico">
 	<link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./bower_components/animate.css/animate.min.css">
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./app.css">
 </head>
 <body>
 <!--
-	site-wrapper作为ng-view，把nav和sidebar提出来
-	首先解决sidebar淡入淡出的问题，用animate.css
-	然后写好sidebar的内容，包括隐藏小图标的问题
-	复习angular，分模块开发
+	下一步划分angular模块
 -->
 <!--navigation-->
 <div class="site-nav">
 	<a href="#" id="toggleBar" data-open="false"><i class="fa fa-lg fa-cog fa-spin"></i></a>
 </div>
 <!--/navigation-->
-<div class="site-wrapper">
+
+<!--ng-view container-->
+<div class="site-view">
 	<!--main content-->
-	<div class="site-wrapper-inner">
-		<!--slogan and social info-->
-		<div class="cover-container">
-			<div class="inner cover">
-				<p class="cover-heading">刘洪宇的个人网站</p>
-				<div class="social-widget">
-					<ul>
-						<li>
-							<a href="https://github.com/sadicLiu" target="_blank">
-								<i class="fa fa-github"></i>
-							</a>
-						</li>
-						<li>
-							<a href="http://weibo.com/p/1005053052077213/home?from=page_100505&mod=TAB#place" target="_blank">
-								<i class="fa fa-weibo"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--/slogan and social info-->
-		<!--main content-->
-		<div class="container">
-			<div class="row d-flex justify-content-center site-content">
-				<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
-					<div class="category">
-						<i class="fa fa-rss"></i>
-						<p>关于技术</p>
-					</div>
-				</div>
-				<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
-					<div class="category">
-						<i class="fa fa-heartbeat animated pulse infinite"></i>
-						<p>关于健身</p>
-					</div>
-				</div>
-				<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
-					<div class="category">
-						<i class="fa fa-instagram"></i>
-						<p style="margin-bottom: 0;">Instagram</p>
-						<span>动态</span>
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<!--slogan and social info-->
+			<div class="cover-container">
+				<div class="inner cover">
+					<p class="cover-heading">刘洪宇的个人网站</p>
+					<div class="social-widget">
+						<ul class="animated pulse infinite">
+							<li>
+								<a href="https://github.com/sadicLiu" target="_blank">
+									<i class="fa fa-github"></i>
+								</a>
+							</li>
+							<li>
+								<a href="http://weibo.com/p/1005053052077213/home?from=page_100505&mod=TAB#place"
+								   target="_blank">
+									<i class="fa fa-weibo"></i>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
+			<!--/slogan and social info-->
+			<!--main content-->
+			<div class="container">
+				<div class="row d-flex justify-content-center site-content">
+					<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+						<div class="category">
+							<div class="box">
+								<i class="fa fa-rss"></i>
+								<p>关于技术</p>
+							</div>
+						</div>
+					</div>
+					<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+						<div class="category">
+							<div class="box">
+								<i class="fa fa-heartbeat animated pulse infinite"></i>
+								<p>关于健身</p>
+							</div>
+						</div>
+					</div>
+					<div class="content-box col-12 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center">
+						<div class="category">
+							<div class="box">
+								<i class="fa fa-instagram"></i>
+								<p style="margin-bottom: 0;">Instagram</p>
+								<span>动态</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/main content-->
 		</div>
-		<!--/main content-->
 	</div>
 	<!--/main content-->
 </div>
+<!--/ng-view container-->
+
 <!--side bar-->
 <div class="site-sidebar">
 	<ul class="nav navbar-nav">
@@ -112,6 +122,42 @@
 <script src="./bower_components/jquery/dist/jquery.slim.min.js"></script>
 <script src="./bower_components/tether/dist/js/tether.min.js"></script>
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./js/main.js"></script>
+<script type="text/javascript">
+	// 之所以要把这段脚本写在这里，是不想把jquery和angular混用
+	/*
+	 * 为sidebar注册事件
+	 * */
+	const toggleBar = $('#toggleBar');
+	const sideBar = $(".site-sidebar");
+
+	toggleBar.on('click', function () {
+		// 标识sidebar是否打开的变量
+		let openFlag = $(this).data('open');
+
+		// 如果sidebar打开了，让它弹出去再隐藏，同时将×替换成齿轮
+		if (openFlag) {
+			sideBar.addClass('animated bounceOutRight');
+
+			sideBar.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				sideBar.removeClass('animated bounceOutRight');
+				sideBar.css({'visibility': 'hidden'});
+			});
+
+			toggleBar.children('i').removeClass('fa-times-circle-o').addClass('fa-cog fa-spin');
+		} else {	// 如果sidebar没打开，进行相反的操作
+			sideBar.css({'visibility': 'visible'}).addClass('animated bounceInRight');
+
+			sideBar.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				sideBar.removeClass('animated bounceInRight');
+			});
+
+			toggleBar.children('i').removeClass('fa-cog fa-spin').addClass('fa-times-circle-o');
+		}
+
+		// 标识取反
+		$(this).data('open', !openFlag);
+	});
+</script>
+<script src="app.js"></script>
 </body>
 </html>

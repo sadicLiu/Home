@@ -1,0 +1,93 @@
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  background: url('./images/background.jpg') no-repeat center fixed;
+  background-size: cover;
+
+  .site-wrapper-inner {
+	vertical-align: top;
+	margin-top: 180px;
+
+	.cover-container {
+	  margin-right: auto;
+	  margin-left: auto;
+
+	  .cover-heading {
+		text-align: center;
+		font: bold 2.75em/1em 'Poppins', sans-serif;
+		margin: 0 0 0.367em;
+		padding: 0;
+		letter-spacing: -0.075em;
+	  }
+
+	  .social-widget {
+		vertical-align: middle;
+		color: #fff;
+		position: relative;
+
+		ul {
+		  padding: 0;
+
+		  li {
+			display: inline-block;
+			margin: 0 5px 5px 0;
+			padding: 0;
+		  }
+		}
+	  }
+	}
+
+	.site-content {
+	  .content-box {
+		margin: 5px 0;
+
+		.category {
+		  width: 120px;
+		  height: 120px;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  background-color: rgba(255, 255, 255, .3);
+		  border-radius: 5px;
+		  border: 2px solid #dfdbdf;
+		  cursor: pointer;
+		  font-weight: bolder;
+
+		  &:hover {
+			color: $baseColor;
+		  }
+		}
+	  }
+	}
+  }
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 2rem;
+}
+
+/* Cover*/
+.cover {
+  padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: bold;
+}
+
+/* Shrink the distance to the top in phone*/
+@media (max-width: 576px) {
+  .site-wrapper .site-wrapper-inner .cover-container {
+	margin-top: 80px;
+  }
+
+  .site-wrapper .site-wrapper-inner .cover-container .cover-heading {
+	font: bold 1.5em/1em 'Poppins', sans-serif;
+  }
+}
