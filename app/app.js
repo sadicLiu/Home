@@ -1,22 +1,15 @@
 (function (angular) {
 	'use strict';
 
-	var myShare = angular.module('myShare', ['ngRoute', 'myShare.homeModule']);
+	var myShare = angular.module('myShare', ['ngRoute', 'myShare.HomeModule']);
 
 	myShare.config(['$routeProvider', function ($routeProvider) {
-		$routeProvider.otherwise({redirectTo: '/in_theaters/1'});
+		// 默认情况下直接跳转到首页
+		$routeProvider.otherwise({redirectTo: '/home'});
 	}]);
 
-	/*
-	 * 为每个category注册事件
-	 * */
-	/*$.each($(".category"), function (index, element) {
-	 var $category = $(element);
-	 var $box = $category.children('.box');
-	 $category.on('mouseenter', function () {
-	 $box.addClass('animated pulse');
-	 }).on('mouseleave', function () {
-	 $box.removeClass('animated pulse');
-	 });
-	 });*/
+	myShare.controller('MainController', ['$scope', function () {
+
+	}]);
+
 })(angular);
