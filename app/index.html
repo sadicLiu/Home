@@ -5,20 +5,20 @@
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Home</title>
+	<title>MyShare</title>
 	<link rel="shortcut icon" href="./favicon.ico">
 	<link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./bower_components/animate.css/animate.min.css">
 	<link rel="stylesheet" href="./app.css">
 </head>
-<body ng-app="myShare" ng-controller="MainController">
+<body ng-app="myShare">
 <!--
 	下一步划分angular模块
 -->
 <!--navigation-->
 <div class="site-nav">
-	<a href="#" id="toggleBar" data-open="false"><i class="fa fa-lg fa-cog fa-spin"></i></a>
+	<a id="toggleBar" data-open="false"><i class="fa fa-lg fa-cog fa-spin"></i></a>
 </div>
 <!--/navigation-->
 
@@ -39,22 +39,22 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">Home</a>
+			<a href="#!/home">Home</a>
 		</li>
 		<li>
-			<a href="#">Technology</a>
+			<a href="#!/technology">Technology</a>
 		</li>
 		<li>
-			<a href="#">BodyBuilding</a>
+			<a href="#!/bodybuilding">BodyBuilding</a>
 		</li>
 		<li>
-			<a href="#">Instagram</a>
+			<a href="#!/instagram">Instagram</a>
 		</li>
 		<li>
-			<a href="#">About Me</a>
+			<a href="#!/about">About Me</a>
 		</li>
 		<li>
-			<a href="#">Contact</a>
+			<a href="#!/contact">Contact</a>
 		</li>
 	</ul>
 </div>
@@ -65,6 +65,7 @@
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./bower_components/angular/angular.js"></script>
 <script src="./bower_components/angular-route/angular-route.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
 <script type="text/javascript">
 	// 之所以要把这段脚本写在这里，是不想把jquery和angular混用
 	/*
@@ -103,5 +104,10 @@
 </script>
 <script src="app.js"></script>
 <script src="./home/homeModule.js"></script>
+<script src="./about_me/aboutModule.js"></script>
+<script src="./technology/technologyModule.js"></script>
+<script src="./bodybuilding/bodybuildingModule.js"></script>
+<script src="./instagram/instagramModule.js"></script>
+<script src="./contact/contactModule.js"></script>
 </body>
 </html>

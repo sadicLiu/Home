@@ -1,5 +1,40 @@
 /* Angular's ng-view container*/
 .site-view {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
+
+/* rotate and fall */
+@keyframes rotateFall {
+  0% {
+	transform: rotateZ(0deg);
+  }
+  20% {
+	transform: rotateZ(4deg);
+	animation-timing-function: ease-out;
+  }
+  40% {
+	transform: rotateZ(9deg);
+  }
+  60% {
+	transform: rotateZ(8deg);
+  }
+  100% {
+	transform: translateY(100%) rotateZ(9deg);
+  }
+}
+
+.site-view.ng-enter {
+  z-index: 8888;
+}
+
+.site-view.ng-leave {
+  z-index: 9999;
+  transform-origin: 0 0;
+  animation: rotateFall 1s both ease-in;
+}
+
+

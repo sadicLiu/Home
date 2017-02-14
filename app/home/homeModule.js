@@ -9,7 +9,7 @@
 		});
 	}]);
 
-	homeModule.controller('HomeController', ['$scope', function () {
+	homeModule.controller('HomeController', ['$scope', function ($scope) {
 
 	}]);
 

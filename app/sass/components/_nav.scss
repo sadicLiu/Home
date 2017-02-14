@@ -1,6 +1,7 @@
 /* Navigation Bar*/
 .site-nav {
   position: relative;
+  z-index: 99999;
 
   a {
 	display: inline-block;
