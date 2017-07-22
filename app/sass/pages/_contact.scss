@@ -1,0 +1,23 @@
+.contact {
+  width: 50%;
+  height: 520px;
+  overflow: hidden;
+  margin: auto;
+
+  .contact-title {
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+  }
+
+  .contact-content {
+	min-height: 440px;
+	margin: 0 0 70px;
+	background-color: #0a0a0a;
+	border: $border;
+	border-radius: $borderRadius;
+	opacity: .7;
+	color: #fff;
+	font-size: 30px;
+  }
+}
