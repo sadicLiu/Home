@@ -2,10 +2,12 @@
 /* Links */
 a,
 a:focus {
-  color: #fff; }
+  color: #fff;
+  text-decoration: none; }
 
 a:hover {
-  color: #fd5a53 !important; }
+  color: #fd5a53 !important;
+  text-decoration: none; }
 
 /* ul's default style*/
 ul {
@@ -20,6 +22,12 @@ body {
   color: #fff;
   text-align: center;
   font-family: "Helvetica", "Tahoma", "Arial", "STXihei", "鍗庢枃缁嗛粦", "Microsoft YaHei", "SimSun", "瀹嬩綋", "Heiti", "榛戜綋", "sans-serif"; }
+
+.ac {
+  text-align: center; }
+
+.no-select {
+  user-select: none; }
 
 /* Navigation Bar*/
 .site-nav {
@@ -171,5 +179,29 @@ body {
 
   .site-wrapper .site-wrapper-inner .cover-container .cover-heading {
     font: bold 1.5em/1em 'Poppins', sans-serif; } }
+.site-bg {
+  background: url("./images/contact.jpg") no-repeat center fixed; }
+
+.contact {
+  width: 50%;
+  height: 520px;
+  overflow: hidden;
+  margin: auto; }
+  .contact .contact-title {
+    height: 70px;
+    line-height: 70px;
+    color: #fff; }
+  .contact .contact-content {
+    margin: 0 0 70px;
+    background-color: #0a0a0a;
+    opacity: .7;
+    border: 2px solid #dfdbdf;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 30px; }
+    .contact .contact-content p {
+      width: 100%; }
+      .contact .contact-content p a {
+        text-decoration: underline; }
 
 /*# sourceMappingURL=app.css.map */
